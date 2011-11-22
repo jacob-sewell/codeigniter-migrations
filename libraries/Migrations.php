@@ -77,7 +77,7 @@ class Migrations {
 		$this->_migrations_enabled OR show_error('Migrations has been loaded but is disabled or set up incorrectly.');
 
 		// If not set, set it
-		$this->_migrations_path == '' OR $this->_migrations_path = APPPATH . 'migrations/';
+		(!empty($this->_migrations_path)) OR $this->_migrations_path = APPPATH . 'migrations/';
 
 		// Add trailing slash if not set
 		if (substr($this->_migrations_path, -1) != '/')
